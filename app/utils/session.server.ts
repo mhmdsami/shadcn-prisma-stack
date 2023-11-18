@@ -1,12 +1,8 @@
-import bcrypt from "bcryptjs";
 import { db } from "~/utils/db.server";
+import { SESSION_SECRET } from "~/utils/env.server";
+import bcrypt from "bcryptjs";
 import { createCookieSessionStorage, redirect } from "@remix-run/node";
 import type { User } from "@prisma/client";
-
-let sessionSecret = process.env.SESSION_SECRET;
-if (!sessionSecret) {
-  throw new Error("SESSION_SECRET is missing in .env");
-}
 
 export async function signUp(
   email: string,
@@ -56,7 +52,7 @@ const { commitSession, getSession, destroySession } =
     cookie: {
       name: "remix_template_session",
       secure: true,
-      secrets: [sessionSecret],
+      secrets: [SESSION_SECRET],
       sameSite: "lax",
       path: "/",
       maxAge: 60 * 60 * 24 * 30,
