@@ -1,38 +1,21 @@
-# Welcome to Remix!
+# remix-shadcn-prisma-ts
+![remix-template](https://github.com/mhmdsami/remix-shadcn-prisma-ts/assets/64266012/2d96fe49-fc97-4a02-bd4b-8cac9ce67480)
 
-- [Remix Docs](https://remix.run/docs)
-
-## Development
-
-From your terminal:
-
-```sh
-npm run dev
+## Using the template
+- Create a remix app with this template
+```
+pnpm dlx create-remix@latest --template mhmdsami/remix-shadcn-prisma-ts
+```
+- Generate Prisma client
+```
+pnpm prisma generate
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
-
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
+## Tech Stack
+- [Remix](https://remix.run/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Prisma](https://www.prisma.io/)
+- [MongoDB](https://www.mongodb.com/)
+- [react-hot-toast](https://react-hot-toast.com/)
+- [TypeScript](https://www.typescriptlang.org/)
