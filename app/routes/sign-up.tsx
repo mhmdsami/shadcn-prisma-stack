@@ -4,6 +4,7 @@ import { Button } from "~/components/ui/button";
 import { createUserSession, getUserId, signUp } from "~/utils/session.server";
 import { validateSignUp } from "~/utils/validation.server";
 import { cn } from "~/lib/utils";
+import siteConfig from "~/site.config";
 import { json, redirect } from "@remix-run/node";
 import { Form, Link, useActionData } from "@remix-run/react";
 import toast from "react-hot-toast";
@@ -16,7 +17,7 @@ import type {
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Sign Up | Remix Template" },
+    { title: `Sign Up | ${siteConfig.name}` },
     { name: "description", content: "Sign Up for Remix Template" },
   ];
 };

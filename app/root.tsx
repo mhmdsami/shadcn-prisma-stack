@@ -1,4 +1,7 @@
 import styles from "~/styles/globals.css";
+import { getUserId } from "~/utils/session.server";
+import Navbar from "~/components/navbar";
+import siteConfig from "~/site.config";
 import {
   Links,
   LiveReload,
@@ -6,14 +9,29 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
+  useLocation,
 } from "@remix-run/react";
-import Navbar from "~/components/navbar";
 import { Toaster } from "react-hot-toast";
-import type { LinksFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
+import type { LinksFunction, LoaderFunction } from "@remix-run/node";
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
+type LoaderData = {
+  isLoggedIn: boolean;
+};
+
+export const loader: LoaderFunction = async ({ request }) => {
+  const isLoggedIn = !!(await getUserId(request));
+
+  return json({ isLoggedIn });
+};
+
 export default function App() {
+  const { isLoggedIn } = useLoaderData<LoaderData>();
+  const { pathname } = useLocation();
+
   return (
     <html lang="en">
       <head>
@@ -21,7 +39,7 @@ export default function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
-        <title>Remix Template</title>
+        <title>{siteConfig.name}</title>
       </head>
       <body className="flex flex-col min-h-screen dark">
         <Toaster
@@ -36,7 +54,7 @@ export default function App() {
             },
           }}
         />
-        <Navbar />
+        <Navbar isLoggedIn={isLoggedIn} path={pathname} />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
