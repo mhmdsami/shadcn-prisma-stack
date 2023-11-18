@@ -8,7 +8,8 @@ interface NavbarProps {
 }
 
 export default function Navbar({ isLoggedIn, path }: NavbarProps) {
-  const { to, text } = siteConfig.navLinks[path in siteConfig.navLinks ? path : "/"]
+  const { to, text } =
+    siteConfig.navLinks[path in siteConfig.navLinks ? path : "/"];
 
   return (
     <nav className="flex flex justify-between items-center px-10 h-20">
