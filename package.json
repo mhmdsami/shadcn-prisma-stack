@@ -1,5 +1,5 @@
 {
-  "name": "remix-shadcn-prisma-ts",
+  "name": "remix-shadcn-prisma-stack",
   "sideEffects": false,
   "type": "module",
   "scripts": {

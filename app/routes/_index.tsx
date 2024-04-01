@@ -1,12 +1,13 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Button } from "~/components/ui/button";
+import siteConfig from "~/site.config";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Remix Template" },
+    { title: siteConfig.name },
     {
       name: "description",
-      content: "Remix with shadcn, PostgreSQL, drizzle and TypeScript",
+      content: siteConfig.description,
     },
   ];
 };
@@ -43,7 +44,13 @@ export default function Index() {
           </Button>
         </div>
       </main>
-      <footer className="p-10">This is <Button variant="link" className="p-0 text-base" asChild><a href="https://mhmdsami.me">my</a></Button> 2023 TechStack. Crafted with ❤️</footer>
+      <footer className="p-10">
+        This is{" "}
+        <Button variant="link" className="p-0 text-base" asChild>
+          <a href="https://mhmdsami.me">my</a>
+        </Button>{" "}
+        2023 TechStack. Crafted with ❤️
+      </footer>
     </div>
   );
 }

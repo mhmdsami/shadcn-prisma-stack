@@ -18,7 +18,7 @@ import type {
 export const meta: MetaFunction = () => {
   return [
     { title: `Sign Up | ${siteConfig.name}` },
-    { name: "description", content: "Sign Up for Remix Template" },
+    { name: "description", content: `Sign Up for ${siteConfig.name}` },
   ];
 };
 
