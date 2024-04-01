@@ -1,5 +1,13 @@
-import { email, minLength, object, parse, string, ValiError } from "valibot";
-import type { BaseSchema, Input } from "valibot";
+import {
+  email,
+  minLength,
+  object,
+  parse,
+  string,
+  ValiError,
+  Output,
+  BaseSchema,
+} from "valibot";
 
 const SignUpSchema = object({
   username: string("Username is required", [
@@ -25,7 +33,7 @@ const SignInSchema = object({
 type ValidatedForm<Schema extends BaseSchema> =
   | {
       success: true;
-      data: Input<Schema>;
+      data: Output<Schema>;
     }
   | {
       success: false;
@@ -33,21 +41,23 @@ type ValidatedForm<Schema extends BaseSchema> =
     };
 
 const validateForm =
-  <T>(schema: T) =>
-  (data: Record<string, any>): ValidatedForm<T> => {
+  <T extends BaseSchema>(schema: T) =>
+  (data: Record<string, unknown>): ValidatedForm<T> => {
     try {
       const parsed = parse(schema, data);
       return { success: true, data: parsed };
     } catch (error) {
       if (error instanceof ValiError) {
-        let errors = {};
+        const errors: Record<string, string> = {};
         error.issues.forEach((issue) => {
           if (issue.path) {
-            errors[issue.path[0].key] = issue.message;
+            errors[String(issue.path[0].key)] = issue.message;
           }
         });
-        return { success: false, errors };
+        return { success: false, errors: errors };
       }
+
+      return { success: false, errors: { error: "Something went wrong" } };
     }
   };
 
