@@ -6,7 +6,7 @@ settings:
 
 dependencies:
   '@prisma/client':
-    specifier: ^5.11.0
+    specifier: ^5.12.1
     version: 5.12.1(prisma@5.12.1)
   '@radix-ui/react-label':
     specifier: ^2.0.2
@@ -83,7 +83,7 @@ devDependencies:
     specifier: ^0.5.13
     version: 0.5.13(prettier@3.2.5)
   prisma:
-    specifier: ^5.11.0
+    specifier: ^5.12.1
     version: 5.12.1
   tailwindcss:
     specifier: ^3.4.3
