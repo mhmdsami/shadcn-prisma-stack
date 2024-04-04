@@ -7,6 +7,7 @@ type SiteConfig = {
       to: string;
     };
   };
+  sessionName: string;
 };
 
 const siteConfig = {
@@ -30,6 +31,7 @@ const siteConfig = {
       to: "/sign-in",
     },
   },
+  sessionName: "__remix_template_session",
 };
 
 export default siteConfig as SiteConfig;

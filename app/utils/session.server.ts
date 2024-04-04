@@ -51,7 +51,7 @@ export async function signIn(
 const { commitSession, getSession, destroySession } =
   createCookieSessionStorage({
     cookie: {
-      name: `__${siteConfig.name.toLowerCase().split(" ").join("_")}_session`,
+      name: siteConfig.sessionName,
       secure: true,
       secrets: [SESSION_SECRET],
       sameSite: "lax",
