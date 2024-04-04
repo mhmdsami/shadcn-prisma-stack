@@ -3,6 +3,7 @@ import { SESSION_SECRET } from "~/utils/env.server";
 import bcrypt from "bcryptjs";
 import { createCookieSessionStorage, redirect } from "@remix-run/node";
 import type { User } from "@prisma-app/client";
+import siteConfig from "~/site.config";
 
 export async function signUp(
   email: string,
@@ -50,7 +51,7 @@ export async function signIn(
 const { commitSession, getSession, destroySession } =
   createCookieSessionStorage({
     cookie: {
-      name: "remix_template_session",
+      name: `__${siteConfig.name.toLowerCase().split(" ").join("_")}_session`,
       secure: true,
       secrets: [SESSION_SECRET],
       sameSite: "lax",
