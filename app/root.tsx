@@ -1,10 +1,9 @@
-import styles from "~/styles/globals.css";
+import styles from "~/styles/globals.css?url";
 import { getUserId } from "~/utils/session.server";
 import Navbar from "~/components/navbar";
 import siteConfig from "~/site.config";
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
@@ -58,7 +57,6 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );

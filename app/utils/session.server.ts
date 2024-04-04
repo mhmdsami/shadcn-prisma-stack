@@ -2,7 +2,7 @@ import { db } from "~/utils/db.server";
 import { SESSION_SECRET } from "~/utils/env.server";
 import bcrypt from "bcryptjs";
 import { createCookieSessionStorage, redirect } from "@remix-run/node";
-import type { User } from "@prisma/client";
+import type { User } from "@prisma-app/client";
 
 export async function signUp(
   email: string,
