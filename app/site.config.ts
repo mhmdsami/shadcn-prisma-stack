@@ -11,7 +11,7 @@ type SiteConfig = {
 };
 
 const siteConfig = {
-  name: "Remix Template",
+  name: "Remix + shadcn/ui + Prisma Starter",
   description: "Remix with shadcn/ui, TailwindCSS, MongoDB, Prisma and more",
   navLinks: {
     "/": {
@@ -31,7 +31,7 @@ const siteConfig = {
       to: "/sign-in",
     },
   },
-  sessionName: "__remix_template_session",
+  sessionName: "__remix_shadcn_primsa_session",
 };
 
 export default siteConfig as SiteConfig;

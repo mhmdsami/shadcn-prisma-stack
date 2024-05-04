@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <div className="grow flex flex-col items-center justify-between">
       <main className="grow flex flex-col gap-3 items-center justify-center">
-        <h1 className="text-5xl font-bold">remix-shadcn-prisma-stack</h1>
+        <h1 className="text-5xl font-bold">shadcn-prisma-stack</h1>
         <div className="flex gap-1">
           Start by editing <pre>routes/_index.tsx</pre>
         </div>

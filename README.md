@@ -1,21 +1,21 @@
-# remix-shadcn-prisma-stack
+# shadcn-prisma-stack
 
-Remix template with shadcn/ui, Prisma, MongoDB, and TypeScript.
+Remix starter with shadcn/ui, Prisma, MongoDB, and TypeScript.
 
-![remix-template](https://github.com/mhmdsami/remix-shadcn-prisma-ts/assets/64266012/2d96fe49-fc97-4a02-bd4b-8cac9ce67480)
+![shadcn-primsa-stack](https://github.com/mhmdsami/shadcn-prisma-stack/assets/78439283/876b3d86-f442-4707-abc8-47ee47742ba2)
 
 ## Using the template
 
 - Create a remix app with this template
 
 ```
-pnpm dlx create-remix@latest --template mhmdsami/remix-shadcn-prisma-stack
+pnpm dlx create-remix@latest --template mhmdsami/shadcn-prisma-stack
 ```
 
 - Generate Prisma client
 
 ```
-pnpm prisma generate
+pnpm db:generate
 ```
 
 ## Tech Stack
