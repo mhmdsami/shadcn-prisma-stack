@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/helpers";
 import siteConfig from "~/site.config";
 import { createUserSession, getUserId, signIn } from "~/utils/session.server";
 import { validateSignIn } from "~/utils/validation.server";
