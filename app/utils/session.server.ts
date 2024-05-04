@@ -1,9 +1,9 @@
+import type { User } from "@prisma-app/client";
+import { createCookieSessionStorage, redirect } from "@remix-run/node";
+import bcrypt from "bcryptjs";
+import siteConfig from "~/site.config";
 import { db } from "~/utils/db.server";
 import { SESSION_SECRET } from "~/utils/env.server";
-import bcrypt from "bcryptjs";
-import { createCookieSessionStorage, redirect } from "@remix-run/node";
-import type { User } from "@prisma-app/client";
-import siteConfig from "~/site.config";
 
 export async function signUp(
   email: string,

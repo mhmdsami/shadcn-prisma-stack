@@ -2,13 +2,13 @@ import { Button } from "~/components/ui/button";
 
 export default function Hero() {
   return (
-    <div className="grow flex flex-col items-center justify-between">
-      <main className="grow flex flex-col gap-3 items-center justify-center">
+    <div className="flex grow flex-col items-center justify-between">
+      <main className="flex grow flex-col items-center justify-center gap-3">
         <h1 className="text-5xl font-bold">shadcn-prisma-stack</h1>
         <div className="flex gap-1">
           Start by editing <pre>routes/_index.tsx</pre>
         </div>
-        <div className="flex flex-col gap-1 items-center">
+        <div className="flex flex-col items-center gap-1">
           <p className="text-sm text-muted-foreground">Built with</p>
           <div className="flex">
             <Button variant="link" className="text-xl">

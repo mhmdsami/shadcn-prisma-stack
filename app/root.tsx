@@ -1,7 +1,5 @@
-import styles from "~/styles/globals.css?url";
-import { getUserId } from "~/utils/session.server";
-import Navbar from "~/components/navbar";
-import siteConfig from "~/site.config";
+import type { LinksFunction, LoaderFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import {
   Links,
   Meta,
@@ -12,8 +10,10 @@ import {
   useLocation,
 } from "@remix-run/react";
 import { Toaster } from "react-hot-toast";
-import { json } from "@remix-run/node";
-import type { LinksFunction, LoaderFunction } from "@remix-run/node";
+import Navbar from "~/components/navbar";
+import siteConfig from "~/site.config";
+import styles from "~/styles/globals.css?url";
+import { getUserId } from "~/utils/session.server";
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
@@ -40,7 +40,7 @@ export default function App() {
         <Links />
         <title>{siteConfig.name}</title>
       </head>
-      <body className="flex flex-col min-h-screen dark">
+      <body className="dark flex min-h-screen flex-col">
         <Toaster
           position="top-right"
           containerClassName="mt-[10vh] mr-4"
